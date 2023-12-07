@@ -12,6 +12,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     background: linear-gradient(90deg, #ffffff, #f1acd0, #ff0000);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
@@ -26,26 +27,29 @@ body {
     50% {
         background-position: 100% 50%;
     }
-}
 
+}
 
 .header-container {
     position: relative;
+    text-align: center;
+    text-align: center;
 }
 
 .main-header,
-.daily-header {
-    position: absolute;
-    top: -13pc;
-    left:-18pc;
+.daily-header,
+.monthly-header {
+    text-align: center;
+    top: -1em;
+    left: -1.5em;
 }
 
 .main-header {
-    animation: fadeOutRoutines 8s forwards;
+    animation: fadeOutRoutines 6s forwards;
 }
 
 .daily-header {
-    animation: fadeOutDaily 16s ease forwards;
+    animation: fadeOutDaily 13s ease forwards;
 }
 
 @keyframes fadeOutRoutines {
@@ -61,20 +65,27 @@ body {
     0% {
         opacity: 0;
     }
-    10%{
-        opacity: 0.2;
-    }
-    5%{
-        opacity: 0.5;
+    50% {
+        opacity: 1;
     }
     100% {
+        opacity: 0;
+    }
+}
+@keyframes fadeOutDailyPhoto {
+    0% {
+        opacity: 0;
+    }
+    50% {
         opacity: 1;
+    }
+    100% {
+        opacity: 0;
     }
 }
 
 .daily {
     opacity: 0;
-    animation: fadeInDaily 10s ease forwards;
 }
 
 @keyframes fadeInDaily {
@@ -86,29 +97,91 @@ body {
     }
 }
 
-
-/* Your existing styles */
-
-#daily1 {
-    position:  absolute;
-    display: flex;
-    justify-content: center;
+.daily-photo1,
+.daily-photo2,
+.daily-photo3,
+.monthly-photo1,
+.monthly-photo2 {
+    position: absolute;
     align-items: center;
-    margin-top: 20px;
+    margin: -140%; /* Center horizontally */
+    margin-left: -200px;
+    width: 400px; /* Set a fixed width for each image */
+    height: 500px; /* Set a fixed height for each image */
+    object-fit: cover; /* Adjust this property as needed */
+    border: 1px solid #000000;
+    opacity: 0;
 }
 
-.daily-photo {
-    opacity: 0;
-    animation: fadeInPhoto 100s forwards;
+.daily-photo1 {
+    animation: fadeInPhoto 8s forwards;
+}
+
+.daily-photo2 {
+    animation: fadeInPhoto 10s forwards;
+}
+
+.daily-photo3 {
+    animation: fadeInPhoto 13s forwards;
+}
+
+.monthly-photo1 {
+    animation: fadeInPhoto 35s forwards;
+}
+
+.monthly-photo2 {
+    animation: fadeInPhoto 30s forwards;
 }
 
 @keyframes fadeInPhoto {
-    from {
+    0% {
         opacity: 0;
         transform: translateY(0px);
     }
-    to {
+    50% {
+        opacity: 0;
+        transform: translateY(0px);
+    }
+    80% {
+        opacity: 1;
+        transform: translateY(10);
+    }
+    90% {
         opacity: 1;
         transform: translateY(0);
     }
+    100% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+}
+@keyframes fadeInMonthly { 0% { opacity: 0;
+}
+ 10%{   opacity: 0;
+}
+80% {
+    opacity: 1;
+}
+100% {
+    opacity: 0;
+}
+}
+@keyframes fadeInMonthlyPhoto {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.monthly-header {
+    position: relative;
+    text-align: center;
+    top: -1.67em;
+    opacity: 0;
+    animation: fadeInMonthly 30s forwards;
 }
