@@ -227,6 +227,7 @@ a {
 
 
 .quiz {
+    font-size: 20px;
     padding:0 30px 20px 30px;
     max-width:960px;
     margin:0 auto;
@@ -238,7 +239,7 @@ a {
     }
   }
   .quiz-question {
-    font-weight:bold;
+    
     display:block;
     padding:30px 0 10px 0;
     margin:0;
@@ -246,7 +247,7 @@ a {
   .quiz-answer {
     margin:0;
     padding:10px;
-    background:#f7f7f7;
+   
     margin-bottom:5px;
     cursor: pointer;
     
