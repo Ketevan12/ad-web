@@ -6,7 +6,7 @@
 }
 
 body {
-    margin: 0;
+    margin: 200px;
     padding: 0;
     height: 100vh;
     display: flex;
@@ -114,24 +114,18 @@ body {
 }
 
 .daily-photo1 {
-    animation: fadeInPhoto 8s forwards;
+    animation: fadeInPhoto 9s forwards;
 }
 
 .daily-photo2 {
-    animation: fadeInPhoto 10s forwards;
+    animation: fadeInPhoto 11s forwards;
 }
 
 .daily-photo3 {
-    animation: fadeInPhoto 13s forwards;
+    animation: fadeInPhoto 14s forwards;
 }
 
-.monthly-photo1 {
-    animation: fadeInPhoto 35s forwards;
-}
 
-.monthly-photo2 {
-    animation: fadeInPhoto 30s forwards;
-}
 
 @keyframes fadeInPhoto {
     0% {
@@ -142,7 +136,7 @@ body {
         opacity: 0;
         transform: translateY(0px);
     }
-    80% {
+    70% {
         opacity: 1;
         transform: translateY(10);
     }
@@ -155,17 +149,28 @@ body {
         transform: translateY(0);
     }
 }
-@keyframes fadeInMonthly { 0% { opacity: 0;
+@keyframes fadeInMonthly {
+0% {
+    opacity: 0;
+    transform: translateY(0px);
 }
- 10%{   opacity: 0;
-}
-80% {
+50% {
     opacity: 1;
+    transform: translateY(0px);
+}
+70% {
+    opacity: 1;
+    transform: translateY(10);
+}
+90% {
+    opacity: 1;
+    transform: translateY(0);
 }
 100% {
     opacity: 0;
-}
-}
+    transform: translateY(0);
+}}
+
 @keyframes fadeInMonthlyPhoto {
     0% {
         opacity: 0;
@@ -173,15 +178,47 @@ body {
     50% {
         opacity: 1;
     }
+    60%{opacity: 0;
+        ;}
     100% {
         opacity: 0;
     }
 }
 
 .monthly-header {
-    position: relative;
+    position:  relative;
     text-align: center;
-    top: -1.67em;
+    top: -1.69em;
+    left: 0;
     opacity: 0;
-    animation: fadeInMonthly 30s forwards;
+    animation: fadeInMonthlyPhoto 25s ease-in;
+     animation-delay: 15s; /* Delay for 2 seconds */
+}
+.monthly-photo1 {
+    animation: fadeInMonthly 33s forwards;
+    animation-delay: 13s; /* Delay for 2 seconds */
+}
+
+.monthly-photo2 {
+    animation: fadeInPhoto 34s forwards;
+    animation-delay: 14s; /* Delay for 4 seconds */
+}
+
+.monthly-header {
+    position:  relative;
+    text-align: center;
+    top: -1.69em;
+    left: 0;
+    opacity: 0;
+    animation: fadeInMonthly 37s ease-in;
+    animation-delay: 12s; /* Delay for 2 seconds */
+
+}
+
+.yearly-header {
+    position:  relative;
+    text-align: center;
+    left: 0;
+    opacity: 0;
+    animation: fadeIn 43s ease-in;
 }
