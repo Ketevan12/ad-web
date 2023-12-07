@@ -6,20 +6,21 @@
 }
 
 body {
-    margin: 200px;
-    padding: 0;
+    margin: 10px;
+    margin-right: 270px;
+    padding-left: 150px;
     height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
     background: linear-gradient(90deg, #ffffff, #f1acd0, #ff0000);
     background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
+    animation: gradient 20s ease infinite;
     font-family: 'DirtyCrown';
-    font-size: 100px;
+    font-size: 70px;
 }
-
+a {
+    text-decoration: none;
+    color: black;
+  }
 @keyframes gradient {
     0%, 100% {
         background-position: 0% 50%;
@@ -46,6 +47,7 @@ body {
 
 .main-header {
     animation: fadeOutRoutines 6s forwards;
+    font-size: 150px;
 }
 
 .daily-header {
@@ -141,7 +143,7 @@ body {
         transform: translateY(10);
     }
     90% {
-        opacity: 1;
+        opacity: 0.5;
         transform: translateY(0);
     }
     100% {
@@ -150,58 +152,32 @@ body {
     }
 }
 @keyframes fadeInMonthly {
-0% {
-    opacity: 0;
-    transform: translateY(0px);
-}
-50% {
-    opacity: 1;
-    transform: translateY(0px);
-}
-70% {
-    opacity: 1;
-    transform: translateY(10);
-}
-90% {
-    opacity: 1;
-    transform: translateY(0);
-}
-100% {
-    opacity: 0;
-    transform: translateY(0);
-}}
-
-@keyframes fadeInMonthlyPhoto {
     0% {
         opacity: 0;
     }
-    50% {
-        opacity: 1;
-    }
-    60%{opacity: 0;
-        ;}
     100% {
-        opacity: 0;
+        opacity: 1;
     }
 }
 
-.monthly-header {
-    position:  relative;
-    text-align: center;
-    top: -1.69em;
-    left: 0;
-    opacity: 0;
-    animation: fadeInMonthlyPhoto 25s ease-in;
-     animation-delay: 15s; /* Delay for 2 seconds */
-}
+
 .monthly-photo1 {
-    animation: fadeInMonthly 33s forwards;
-    animation-delay: 13s; /* Delay for 2 seconds */
+    animation: fadeInPhoto 23s forwards;
+    animation-delay: 2s;
+    width: 450px; /* Set a fixed width for each image */
+    height: 550px; /* Set a fixed height for each image */
+    margin: -140%; /* Center horizontally */
+    margin-left: -235px;
+
 }
 
 .monthly-photo2 {
-    animation: fadeInPhoto 34s forwards;
-    animation-delay: 14s; /* Delay for 4 seconds */
+    animation: fadeInPhoto 26s forwards;
+    animation-delay: 2s; 
+    width: 450px; /* Set a fixed width for each image */
+    height: 550px; /* Set a fixed height for each image */
+    margin: -140%; /* Center horizontally */
+    margin-left: -235px;
 }
 
 .monthly-header {
@@ -210,15 +186,125 @@ body {
     top: -1.69em;
     left: 0;
     opacity: 0;
-    animation: fadeInMonthly 37s ease-in;
-    animation-delay: 12s; /* Delay for 2 seconds */
-
+    animation: fadeInPhoto 20s ease-in;
 }
 
 .yearly-header {
+    z-index: top;
     position:  relative;
     text-align: center;
+    top: -400px;
     left: 0;
     opacity: 0;
-    animation: fadeIn 43s ease-in;
+    animation: fadeInPhoto 41s ease-in;
 }
+.yearly-photo1{
+    position: absolute;
+    align-items: center;
+    margin: -200%; /* Center horizontally */
+    margin-left: -260px;
+    width: 500px; /* Set a fixed width for each image */
+    height: 600px; /* Set a fixed height for each image */
+    object-fit: cover; /* Adjust this property as needed */
+    border: 1px solid #000000;
+    opacity: 0;
+    animation: fadeInPhoto 55s forwards;
+}
+
+.header{   position:  relative;
+    text-align: center ;
+    align-items: center;
+    justify-content: center;
+    padding-left: -60px;
+  height: 700px;
+   width: 650px;
+    top: 80px;
+    left: 370px;
+    opacity: 0;
+    animation: fadeInPhoto 63s ease-in;
+    font-size: 180px;
+}
+
+
+.quiz {
+    padding:0 30px 20px 30px;
+    max-width:960px;
+    margin:0 auto;
+    
+    ul {
+      list-style:none;
+      padding:0;
+      margin:0;
+    }
+  }
+  .quiz-question {
+    font-weight:bold;
+    display:block;
+    padding:30px 0 10px 0;
+    margin:0;
+  }
+  .quiz-answer {
+    margin:0;
+    padding:10px;
+    background:#f7f7f7;
+    margin-bottom:5px;
+    cursor: pointer;
+    
+    &:hover {
+      background:#eee;
+    }
+    
+    &:before {
+      content:"";
+      display:inline-block;
+      width:15px;
+      height:15px;
+      border:1px solid #ccc;
+      background:#fff;
+      vertical-align:middle;
+      margin-right:10px;
+    }
+    
+    &.active {
+      &:before {
+        background-color:#333;
+        border-color:#333;
+      }
+    }
+    &.correct {
+      &:before {
+        background-color:green;
+        border-color:green;
+      }
+    }
+    &.incorrect {
+      &:before {
+        background-color:red;
+        border-color:red;
+      }
+    }
+    &.active.correct {
+      &:before {
+        outline: 2px solid green;
+        outline-offset: 2px;
+      }
+    }
+  }
+  .quiz-result {
+    max-width:960px;
+    margin:0 auto;
+    font-weight:bold;
+    text-align:center;
+    color: #fff;
+    padding:20px;
+    
+    &.good {
+      background: green;
+    }
+    &.mid {
+      background: orange;
+    }
+    &.bad {
+      background: red;
+    }
+  }
