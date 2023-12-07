@@ -1,0 +1,114 @@
+@font-face {
+    font-family: 'DirtyCrown';
+    src: url('DirtyCrown.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, #ffffff, #f1acd0, #ff0000);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    font-family: 'DirtyCrown';
+    font-size: 100px;
+}
+
+@keyframes gradient {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+
+.header-container {
+    position: relative;
+}
+
+.main-header,
+.daily-header {
+    position: absolute;
+    top: -13pc;
+    left:-18pc;
+}
+
+.main-header {
+    animation: fadeOutRoutines 8s forwards;
+}
+
+.daily-header {
+    animation: fadeOutDaily 16s ease forwards;
+}
+
+@keyframes fadeOutRoutines {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOutDaily {
+    0% {
+        opacity: 0;
+    }
+    10%{
+        opacity: 0.2;
+    }
+    5%{
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.daily {
+    opacity: 0;
+    animation: fadeInDaily 10s ease forwards;
+}
+
+@keyframes fadeInDaily {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* Your existing styles */
+
+#daily1 {
+    position:  absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.daily-photo {
+    opacity: 0;
+    animation: fadeInPhoto 100s forwards;
+}
+
+@keyframes fadeInPhoto {
+    from {
+        opacity: 0;
+        transform: translateY(0px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
